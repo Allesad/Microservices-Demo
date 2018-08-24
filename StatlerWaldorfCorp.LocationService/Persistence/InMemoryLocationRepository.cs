@@ -7,11 +7,10 @@ namespace StatlerWaldorfCorp.LocationService.Persistence
 {
     public class InMemoryLocationRepository : ILocationRepository
     {
-        private static Dictionary<Guid, SortedList<long, LocationRecord>> _records;
+        private static Dictionary<Guid, SortedList<long, LocationRecord>> _records = new Dictionary<Guid, SortedList<long, LocationRecord>>();
 
         public InMemoryLocationRepository()
         {
-            _records = new Dictionary<Guid, SortedList<long, LocationRecord>>();
         }
 
         public LocationRecord Add(LocationRecord record)
